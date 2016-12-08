@@ -25,7 +25,10 @@ module.exports = function(app) {
     var information = new InfoSchemes({
       nombre:    req.body.nombre,
       apellidos:    req.body.apellidos,
-      comentario:  req.body.comentario 
+      profesion: req.body.profesion,
+      pais: req.body.pais,
+      comentario:  req.body.comentario,
+      fecha: req.body.fecha
     });
 
     information.save(function(err) {
