@@ -4,7 +4,10 @@ var mongoose = require('mongoose'),
 var visitasSchema = new Schema({
 	nombre: String ,
 	apellidos: String,
-	comentario: String 
+	profesion: String,
+	pais: String,
+	comentario: String,
+	fecha: Date 
 });
 
 

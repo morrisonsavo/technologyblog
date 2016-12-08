@@ -25,7 +25,7 @@ module.exports = function(app) {
     var information = new InfoSchemes({
       nombre:    req.body.nombre,
       apellidos:    req.body.apellidos,
-      comentarios:  req.body.comentarios 
+      comentario:  req.body.comentario 
     });
 
     information.save(function(err) {
