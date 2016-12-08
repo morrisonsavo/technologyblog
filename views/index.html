@@ -21,6 +21,9 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 </head>
@@ -60,25 +63,13 @@
 
 
         document.getElementById("info").innerHTML += "<tr class='fila'>    \
-                                                    <td>              \
-                                                        " + requestBody.nombre + "   \
-                                                    </td>             \
-                                                    <td>              \
-                                                        " + requestBody.apellidos + "   \
-                                                    </td>             \
-                                                    <td>              \
-                                                        " + requestBody.profesion + "   \
-                                                    </td>             \
-                                                    <td>              \
-                                                        " + requestBody.pais + "   \
-                                                    </td>             \
-                                                    <td>              \
-                                                        " + requestBody.comentario + "   \
-                                                    </td>             \
-                                                    <td>              \
-                                                        " + requestBody.fecha + "   \
-                                                    </td>             \
-                                                 </tr>";
+                                                        <td >              \
+                                                            <h5>" +"Nombre : "+ requestBody.nombre + " "+requestBody.apellidos + " Profesion: "+ requestBody.profesion+"   \
+                                                        </h5></td>             \
+                                                        <td ><h5>              \
+                                                            " +"Pais : " +requestBody.pais + " Comentarios : "+requestBody.comentario + " Fecha : "+ requestBody.fecha+"   \
+                                                        </h5></td>             \
+                                                     </tr>";
 
 
         
@@ -138,30 +129,24 @@
         </div>
     </header>
 
-    <div > 
-        <table id="info" name="info" class="tabla">
-            <tr class="titulos">
-            <td>
-            Nombres
-            </td>
-            <td>
-            Apellidos
-            </td>
-            <td>
-            Profesion
-            </td>
-            <td>
-            Pais
-            </td>
-            <td>
-            Comentarios
-            </td>
-            <td>
-            Fecha
-            </td>
-            </tr>
-        </table>
 
+
+
+    <div class="container"> 
+    <h3 align="center">
+        Comentarios: 
+    </h3>
+    <table border="1" style="margin: 0 auto;" class="table table-striped">
+        <tbody>
+            <tr>
+                <td>
+                    <table style="margin: 0 auto;" class="table table-striped" width="255" id="info" name="info">
+                       
+                    </table>
+                </td>            
+            </tr>
+        </tbody>
+    </table>
     </div>
 
 
