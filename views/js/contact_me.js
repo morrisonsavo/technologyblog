@@ -42,6 +42,9 @@ $(function() {
                         .append("<strong>Your message has been sent. </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
+                        
+                        window.location.assign("http://localhost:8080/")
+
 
                     //clear all fields
                     $('#contactForm').trigger("reset");
@@ -74,3 +77,4 @@ $(function() {
 $('#nombre').focus(function() {
     $('#success').html('');
 });
+

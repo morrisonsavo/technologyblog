@@ -17,12 +17,12 @@ app.use(function(req, res, next) {
 });
 
 
-
-
-});
   app.set('views', __dirname + '/views');
   app.engine('html', require('ejs').renderFile);
   app.use(express.static('views'))
+
+});
+
 
 
 routes = require('./routes/controller')(app);

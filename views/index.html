@@ -25,7 +25,71 @@
 
 </head>
 
-<body>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+<script type="text/javascript">
+    
+ function my_funcion(){
+  $.get("http://localhost:8080/invitados", function(data){
+  listaDetalle = data;
+  
+  var contador;
+  for (contador = 0; contador < data.length; contador++) {
+
+    requestBody = {
+
+            "nombre": data[contador].nombre,
+            "apellidos": data[contador].apellidos,
+            "profesion": data[contador].profesion,
+            "pais": data[contador].pais,
+            "comentario": data[contador].comentario,
+            "fecha": data[contador].fecha
+    }
+
+
+        document.getElementById("info").innerHTML += "<tr class='fila'>    \
+                                                    <td>              \
+                                                        " + requestBody.nombre + "   \
+                                                    </td>             \
+                                                    <td>              \
+                                                        " + requestBody.apellidos + "   \
+                                                    </td>             \
+                                                    <td>              \
+                                                        " + requestBody.profesion + "   \
+                                                    </td>             \
+                                                    <td>              \
+                                                        " + requestBody.pais + "   \
+                                                    </td>             \
+                                                    <td>              \
+                                                        " + requestBody.comentario + "   \
+                                                    </td>             \
+                                                    <td>              \
+                                                        " + requestBody.fecha + "   \
+                                                    </td>             \
+                                                 </tr>";
+
+
+        
+        
+  };
+
+    });    
+ }
+
+</script>
+<body onload="my_funcion();">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
@@ -55,6 +119,9 @@
         <!-- /.container -->
     </nav>
 
+
+     
+
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url('img/contact-bg.jpg')">
@@ -71,21 +138,34 @@
         </div>
     </header>
 
+    <div > 
+        <table id="info" name="info" class="tabla">
+            <tr class="titulos">
+            <td>
+            Nombres
+            </td>
+            <td>
+            Apellidos
+            </td>
+            <td>
+            Profesion
+            </td>
+            <td>
+            Pais
+            </td>
+            <td>
+            Comentarios
+            </td>
+            <td>
+            Fecha
+            </td>
+            </tr>
+        </table>
+
+    </div>
 
 
 
-    <!-- jQuery -->
-    <script src="views/vendor/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
 
 </body>
 
