@@ -5,10 +5,10 @@ module.exports = function(app) {
 
   
   findAllVisits = function(req, res) {
-    InfoSchemes.find(function(err, tvshows) {
+    InfoSchemes.find(function(err, controller) {
       if(!err) {
         console.log('GET /invitados')
-        res.send(tvshows);
+        res.send(controller);
       } else {
         console.log('ERROR: ' + err);
       }

@@ -10,9 +10,6 @@ app.configure(function () {
   app.use(app.router);
 });
 
-//app.get('/', function(req, res) {
-  //res.send("Hello world!");
-//});
 
 routes = require('./routes/controller')(app);
 
