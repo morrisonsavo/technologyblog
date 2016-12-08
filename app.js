@@ -1,21 +1,29 @@
-var express = require("express"),  
-    app = express(),
-    bodyParser  = require("body-parser"),
-    methodOverride = require("method-override");
-    mongoose = require('mongoose');
+var express  = require("express"),
+    app      = express(),
+    http     = require("http"),
+    server   = http.createServer(app),
+    mongoose = require('mongoose'); 
 
-app.use(bodyParser.urlencoded({ extended: false }));  
-app.use(bodyParser.json());  
-app.use(methodOverride());
-
-var router = express.Router();
-
-router.get('/', function(req, res) {  
-   res.send("Hello World! primera pagina ");
+app.configure(function () {
+  app.use(express.bodyParser());
+  app.use(express.methodOverride());
+  app.use(app.router);
 });
 
-app.use(router);
+//app.get('/', function(req, res) {
+  //res.send("Hello world!");
+//});
 
-app.listen(8080, function() {  
+routes = require('./routes/controller')(app);
+
+mongoose.connect('mongodb://localhost/invitados', function(err, res) {
+  if(err) {
+    console.log('ERROR: connecting to Database. ' + err);
+  } else {
+    console.log('Connected to Database');
+  }
+});
+
+server.listen(8080, function() {
   console.log("Node server running on http://localhost:8080");
 });
