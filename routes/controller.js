@@ -47,5 +47,8 @@ module.exports = function(app) {
   //Link routes and functions
   app.get('/invitados', findAllVisits);
   app.post('/invitados', addVisit);
+  app.get('/',function(req, res){
+      res.render("index.html")
+  })
 
 }

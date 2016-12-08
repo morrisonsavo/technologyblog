@@ -21,10 +21,9 @@ $(function() {
                 nombre = nombre.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "localhost:8080/invitados",
+                url: "http://localhost:8080/invitados",
                 type: "POST",
-                Content-Type: "application/json",
-
+                datatype: 'application/json',
                 data: {
                     nombre: nombre,
                     apellidos: apellidos,

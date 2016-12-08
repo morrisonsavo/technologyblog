@@ -1,8 +1,9 @@
 {
-  "name" : "Blog",
-  "version" : "0.0.1",
-  "dependencies" : {
-    "express" : "3.2.6",
-    "mongoose" : "3.6.11"
+  "name": "Blog",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "3.2.6",
+    "mongoose": "3.6.11",
+    "ejs": "~2.5.5"
   }
 }
