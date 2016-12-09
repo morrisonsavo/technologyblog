@@ -35,6 +35,6 @@ mongoose.connect('mongodb://localhost/invitados', function(err, res) {
   }
 });
 
-server.listen(8080, function() {
+server.listen(80, function() {
   console.log("Node server running on http://localhost:8080");
 });

@@ -21,7 +21,7 @@ $(function() {
                 nombre = nombre.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "http://localhost:8080/invitados",
+                url: "http://159.203.179.222/invitados",
                 type: "POST",
                 datatype: 'application/json',
                 data: {
@@ -43,7 +43,7 @@ $(function() {
                     $('#success > .alert-success')
                         .append('</div>');
                         
-                        window.location.assign("http://localhost:8080/")
+                        window.location.assign("http://159.203.179.222")
 
 
                     //clear all fields
@@ -54,7 +54,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + nombre + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append("<strong>Sorry " + nombre + ", it seems the server is not responding. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
